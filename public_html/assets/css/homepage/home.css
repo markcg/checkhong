@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 31, 2015, 6:06:37 PM
+    Author     : W.J
+*/
+.home_main_section-wrapper{
+    padding: 100px 0;
+}
+.home_main_section.landing-quote{
+    color: white;
+}
+.home_main_section.landing-quote h3{
+    font-family: th-description;
+}
+.home_main_section.landing-quote h1{
+    font-family: th-description;
+    font-size: 5em;
+}

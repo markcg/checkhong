@@ -1,2 +1,42 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@font-face {
+    font-family: th-description;
+    src: url('/assets/fonts/th/CSPraJad.otf');
+}
 
+@font-face {
+    font-family: th-title;
+    src: url('/assets/fonts/th/bangna-new.ttf');
+}
+
+body{
+    font-family: th-description;
+    background-color: black;
+    color: white;
+    a{
+        font-family: th-description;
+        color: #00cc00;
+    }
+}
+h1,h2,h3,h4,h5,h6{color: white;}
+h1,h2,h3{
+    font-family: th-title;
+    font-weight: bold;
+}
+h4,h5,h6{
+    font-family: th-description;
+    font-weight: bold;
+}
+.th-title{font-family: th-title;}
+.th-description{font-family: th-description;}
+.navbar{
+    margin-bottom: 0;
+}
+.navbar-default{
+    background-color: #000;
+    border: none;
+    border-radius: 0;
+    .navbar-nav > li > a{
+        color: white;
+    }
+}
