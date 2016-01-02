@@ -23,7 +23,7 @@ class PropertyController extends Controller {
     }
 
     public function getAddRoom() {
-        return view('property.report');
+        return view('property.add_room');
     }
 
     public function getCheckIn() {
@@ -32,6 +32,10 @@ class PropertyController extends Controller {
 
     public function getReport() {
         return view('property.report');
+    }
+
+    public function getEmployee() {
+        return view('property.employee');
     }
 
 }
