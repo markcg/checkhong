@@ -48,7 +48,12 @@
                 <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        @if (!Session::has('member'))
                         <li><a href="{{ url('/') }}">หน้าแรก</a></li>
+                        @else
+                        <li><a href="{{ url('/member/property') }}"><i class="fa fa-btn fa-calendar"></i>จัดกาารกิจการ</a></li>
+                        <li><a href="{{ url('/property') }}"><i class="fa fa-btn fa-sign-out"></i>บริหารกิจการ</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

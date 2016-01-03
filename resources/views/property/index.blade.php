@@ -34,7 +34,8 @@
                                     ?>
                                     <td>
                                         <?php
-                                        $today = date("Y-m-d H:i:s", mktime(24, 0, 0, date('m'), $i, date('Y')));
+                                        $today = date("Y-m-d H:i:s", mktime(0, 0, 0, date('m'), $i, date('Y')));
+                                        $todayEnd = date("Y-m-d H:i:s", mktime(23, 59, 59, date('m'), $i, date('Y')));
                                         if ($i == $days) {
                                             $tomorrow = date("Y-m-d H:i:s", mktime(0, 0, 0, date('m') + 1, 1, date('Y')));
                                         } else {
@@ -42,9 +43,16 @@
                                         }
                                         $booking = $room
                                                 ->bookings()
-                                                ->where('check_in', '<=', $today)
+                                                ->where('check_in', '<=', $todayEnd)
                                                 ->where('check_out', '>=', $tomorrow)
-//                                                ->whereRaw("'$tomorrow' >= `check_out`")
+                                                ->orWhere(function ($query) use ($room, $today, $todayEnd) {
+                                                    $query->where('room_id', '=', $room->id)
+                                                    ->whereBetween('check_in', [$today, $todayEnd]);
+                                                })
+                                                ->orWhere(function ($query) use ($room, $today, $todayEnd) {
+                                                    $query->where('room_id', '=', $room->id)
+                                                    ->whereBetween('check_out', [$today, $todayEnd]);
+                                                })
                                                 ->first();
                                         if ($booking) {
                                             if ($old != $booking->id) {

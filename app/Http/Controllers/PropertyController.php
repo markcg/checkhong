@@ -25,7 +25,7 @@ class PropertyController extends Controller {
      */
     public function getIndex(Request $request) {
         Session::put('month',$this->monthName());
-        if (isset($request->c) && !Session::has('property')) {
+        if (isset($request->c)) {
             if (Session::has('member')) {
                 $property = Session::get('member')->properties()->where('code', '=', $request->c)->first();
                 Session::put('property', $property);

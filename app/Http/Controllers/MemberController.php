@@ -78,6 +78,11 @@ class MemberController extends Controller {
                             ->withErrors($validator)
                             ->withInput();
         }
+        if (Session::get('member')->type <= 1) {
+            return redirect()->back()
+                            ->withErrors(['บัญชีผู้ใช้ของคุณเป็นเวอร์ชั่นทดลอง ไม่สามารถสร้างกิจการได้มากกว่า 1 กิจการ'])
+                            ->withInput();
+        }
         $member = \App\Models\Member::find(Session::get('member')->id);
         $property = new \App\Models\Property();
         $property->name = $request->name;
