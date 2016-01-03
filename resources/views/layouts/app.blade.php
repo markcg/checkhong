@@ -16,12 +16,12 @@
         <link href="/assets/css/app.css" rel="stylesheet" type="text/css"/>
         @yield('style')
         <style>
-            body {
-                font-family: 'Lato';
-            }
-
             .fa-btn {
                 margin-right: 6px;
+            }
+            #checkhong-logo{
+                margin-top: -10px;
+                display: inline;
             }
         </style>
     </head>
@@ -40,6 +40,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        <img id="checkhong-logo" height="25" src="/images/public/checkhonglogo.jpg">
                         CheckHong
                     </a>
                 </div>
@@ -47,23 +48,23 @@
                 <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        @if (!Session::has('member'))
+                        <li><a href="{{ url('/login') }}">ลงชื่อเข้าใช้</a></li>
+                        <li><a href="{{ url('/register') }}">สมัครสมาชิก</a></li>
                         @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Session::get('member')->email }} <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/member') }}"><i class="fa fa-btn fa-calendar"></i>จัดกาารกิจการ</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>ล้อคเอ้าท์</a></li>
                             </ul>
                         </li>
                         @endif

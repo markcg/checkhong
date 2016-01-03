@@ -25,8 +25,10 @@
   | kernel and includes session state, CSRF protection, and more.
   |
  */
-Route::get('/property/{id}', 'PropertyController@getIndex')->where('id', '[0-9]+');
-Route::controller('/property', 'PropertyController');
-Route::controller('/member', 'MemberController');
-Route::controller('/', 'HomeController');
+Route::group(['middleware' => 'web'], function () {
+    Route::controller('/property', 'PropertyController');
+    Route::controller('/member', 'MemberController');
+    Route::controller('/', 'HomeController');
+});
+
 

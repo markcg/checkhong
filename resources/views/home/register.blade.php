@@ -10,14 +10,24 @@
         </div>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <form method="GET" action="/member">
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form method="POST" action="/register">
+                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        <input name="email" type="email" class="form-control" id="Email" placeholder="Email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input name="password" type="password" class="form-control" id="Password" placeholder="Password" value="{{ old('password') }}">
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-default">Submit</button>

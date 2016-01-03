@@ -6,7 +6,7 @@
         <div><h3>เริ่มต้นบริหารจัดการห้องพักของคุณ</h3></div>
         <div><h3>ด้วยระบบการจัดการจากเรา</h3></div>
         <div><h1>Check Hong</h1></div>
-        <div><button class="btn btn-success">ทดลองใช้งาน</button></div>
+        <div><a href="/register"><button class="btn btn-success">ทดลองใช้งาน</button></a></div>
     </div>
 </div>
 @endsection
