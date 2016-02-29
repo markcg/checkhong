@@ -2,7 +2,7 @@
 	<div class="text-right">
 		<h1>Menu</h1>
 	</div>
-    <div class="container-fluid">
+    <div class="">
         <ul class="nav">
             <li><a href="/member">ภาพรวม</a></li>
             <li><a href="/member/property">จัดการโรงแรม</a></li>

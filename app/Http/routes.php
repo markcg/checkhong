@@ -26,7 +26,7 @@
   |
  */
   Route::group(['domain' => '{sub}.checkhong.local','middleware' => 'web'], function () {
-    Route::controller('/manage', 'PropertyController');
+    Route::controller('/property', 'PropertyController');
     Route::controller('/', 'HotelController');
   });
 

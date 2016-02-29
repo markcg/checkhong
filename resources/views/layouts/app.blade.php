@@ -52,7 +52,7 @@
                     <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                     @else
                     <li><a href="{{ url('/member/property') }}"><i class="fa fa-btn fa-calendar"></i>จัดกาารกิจการ</a></li>
-                    <li><a href="{{ url('/property') }}"><i class="fa fa-btn fa-sign-out"></i>บริหารกิจการ</a></li>
+                    <li><a href="{{ url('/property') }}"><i class="fa fa-btn fa-sign-out"></i>บริหารกิจการ<?php if(Session::has('property')) echo " : ".Session::get('property')->name; ?></a></li>
                     @endif
                 </ul>
 
@@ -77,7 +77,22 @@
             </div>
         </div>
     </nav>
-    <div class="main-body container">
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>
+                        {!! $error !!}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class="main-body">
         @yield('content')
     </div>
     <!-- JavaScripts -->

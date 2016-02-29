@@ -2,7 +2,7 @@
 	<div class="text-right">
 		<h1>Menu</h1>
 	</div>
-    <div class="container-fluid">
+    <div class="">
         <ul class="nav">
             <li><a href="/property">ภาพรวมโรงแรม</a></li>
             <li><a href="/property/add-room">เพิ่ม - ลบ ที่พัก</a></li>

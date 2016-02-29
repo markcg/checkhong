@@ -1,19 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-@include('property.menu')
 <div class="row home_main_section-wrapper">
-    <div class="">
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h1>รายงานสรุปกิจการของคุณ</h1>
-            </div>
+    <div class="container">
+        <div class="col-sm-2">
+            @include('property.menu')
         </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <div>ยอดขายประจำปี <button class="btn btn-info">เปิดดู</button></div>
-                <div>ยอดขายประจำเดือน <button class="btn btn-info">เปิดดู</button></div>
-                <div>ยอดขายประจำสัปดาห์ <button class="btn btn-info">เปิดดู</button></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h1>รายงานสรุปกิจการของคุณ</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div>ยอดขายประจำปี <button class="btn btn-info">เปิดดู</button></div>
+                    <div>ยอดขายประจำเดือน <button class="btn btn-info">เปิดดู</button></div>
+                    <div>ยอดขายประจำสัปดาห์ <button class="btn btn-info">เปิดดู</button></div>
+                </div>
             </div>
         </div>
     </div>

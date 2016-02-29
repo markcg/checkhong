@@ -78,6 +78,21 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>
+                        {!! $error !!}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
+    </div>
     <div class="main-body container">
         @yield('content')
     </div>

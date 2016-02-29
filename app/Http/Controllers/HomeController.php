@@ -9,6 +9,7 @@ use Log;
 use Hash;
 use function view;
 
+
 class HomeController extends Controller {
 
     /**

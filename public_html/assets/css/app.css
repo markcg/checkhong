@@ -61,17 +61,15 @@ h4, h5, h6 {
   overflow: hidden;
 }
 .home_main_section-wrapper{
-  float: left;
   min-width: 800px;
-  width: 80%;
 }
 .home_main_section-wrapper .nav li,
 .home_menu_section-wrapper .nav li{
   text-align: right;
 }
-.home_menu_section-wrapper{
+/*.home_menu_section-wrapper{
   float: left;
   min-width: 200px;
   width: 20%;
-}
+}*/
 /*# sourceMappingURL=app.css.map */
