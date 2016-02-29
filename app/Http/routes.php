@@ -25,7 +25,7 @@
   | kernel and includes session state, CSRF protection, and more.
   |
  */
-  Route::group(['domain' => '{sub}.checkhong.local','middleware' => 'web'], function () {
+  Route::group(['domain' => '{sub}.checkhong.com','middleware' => 'web'], function () {
     Route::controller('/property', 'PropertyController');
     Route::controller('/', 'HotelController');
   });

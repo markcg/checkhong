@@ -42,8 +42,7 @@ class PropertyController extends Controller
             }
         } else if (Session::has('hotel')) {
             if (Session::has('member')) {
-                $member   = Member::find(Session::get('member')->id);
-                $property = $member->properties()->first();
+                $property = Property::where("code", '=', Session::get('hotel'))->first();
                 Session::put('property', $property);
                 return view('property.index');
             }

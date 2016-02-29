@@ -60,7 +60,7 @@ class HotelController extends Controller
                 ->withInput();
         }
         if (Session::has('hotel')) {
-            $property = Property::where("name", '=', Session::get('hotel'))->first();
+            $property = Property::where("code", '=', Session::get('hotel'))->first();
             if ($property) {
                 $member = $property->employees()->where("username", "=", $request->username)->first();
                 if (Hash::check($request->password, $member->password)) {

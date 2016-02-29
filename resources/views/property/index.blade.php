@@ -27,7 +27,7 @@
                                 <?php } ?>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="height: 400px; overflow-y: scroll;">
                             <?php foreach (Session::get('property')->rooms()->get() as $room): ?>
                                 <tr class="booking_calendar-room" id="{{$room->code}}">
                                     <td>{{$room->code}}</td>
