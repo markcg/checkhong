@@ -9,7 +9,7 @@ use App\Models\Booking;
 @section('content')
 @include('member.menu')
 <div class="row home_main_section-wrapper">
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h1>จัดการโรงแรม</h1>

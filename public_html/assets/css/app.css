@@ -1,48 +1,77 @@
 @font-face {
   font-family: th-description;
-  src: url("/assets/fonts/th/CSPraJad.otf"); }
+  src: url("/assets/fonts/th/CSPraJad.otf"); 
+}
 
 @font-face {
   font-family: th-title;
-  src: url("/assets/fonts/th/bangna-new.ttf"); }
+  src: url("/assets/fonts/th/bangna-new.ttf"); 
+}
 
 body {
   font-family: th-description;
   background-color: black;
-  color: white; }
-  body a {
-    font-family: th-description;
-    color: #00cc00; }
+  color: white; 
+}
+body a {
+  font-family: th-description;
+  color: #00cc00; 
+}
 
 h1, h2, h3, h4, h5, h6 {
-  color: white; }
+  color: white; 
+}
 
 h1, h2, h3 {
   font-family: th-title;
-  font-weight: bold; }
+  font-weight: bold; 
+}
 
 h4, h5, h6 {
   font-family: th-description;
-  font-weight: bold; }
+  font-weight: bold; 
+}
 
 .th-title {
-  font-family: th-title; }
+  font-family: th-title; 
+}
 
 .th-description {
-  font-family: th-description; }
+  font-family: th-description; 
+}
 
 .row {
   margin-left: 0;
-  margin-right: 0; }
+  margin-right: 0; 
+}
 
 .navbar {
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+}
 
 .navbar-default {
   background-color: #000;
   border: none;
-  border-radius: 0; }
-  .navbar-default .navbar-nav > li > a {
-    color: white; }
-
+  border-radius: 0; 
+}
+.navbar-default .navbar-nav > li > a {
+  color: white; 
+}
+.main-body{
+  overflow: hidden;
+}
+.home_main_section-wrapper{
+  float: left;
+  min-width: 800px;
+  width: 80%;
+}
+.home_main_section-wrapper .nav li,
+.home_menu_section-wrapper .nav li{
+  text-align: right;
+}
+.home_menu_section-wrapper{
+  float: left;
+  min-width: 200px;
+  width: 20%;
+}
 /*# sourceMappingURL=app.css.map */

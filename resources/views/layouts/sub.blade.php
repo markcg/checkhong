@@ -41,18 +41,20 @@
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img id="checkhong-logo" height="25" src="/images/public/checkhonglogo.jpg">
-                    CheckHong
+                    CheckHong - @if (Session::has('sub')) 
+                    {{Session::get('sub')}} 
+                    @endif
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+
                     @if (!Session::has('member'))
                     <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                     @else
-                    <li><a href="{{ url('/member/property') }}"><i class="fa fa-btn fa-calendar"></i>จัดกาารกิจการ</a></li>
-                    <li><a href="{{ url('/property') }}"><i class="fa fa-btn fa-sign-out"></i>บริหารกิจการ</a></li>
+                    <li><a href="{{ url('/manage') }}"><i class="fa fa-btn fa-sign-out"></i>บริหารกิจการ</a></li>
                     @endif
                 </ul>
 
@@ -61,7 +63,6 @@
                     <!-- Authentication Links -->
                     @if (!Session::has('member'))
                     <li><a href="{{ url('/login') }}">ลงชื่อเข้าใช้</a></li>
-                    <li><a href="{{ url('/register') }}">สมัครสมาชิก</a></li>
                     @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -1,6 +1,9 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default home_menu_section-wrapper">
+	<div class="text-right">
+		<h1>Menu</h1>
+	</div>
     <div class="container-fluid">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav">
             <li><a href="/member">ภาพรวม</a></li>
             <li><a href="/member/property">จัดการโรงแรม</a></li>
             <li><a href="/member/profile">จัดการข้อมูลส่วนตัว</a></li>

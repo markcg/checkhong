@@ -18,7 +18,7 @@ use Closure;
 use Session;
 use Config;
 
-class IsMember {
+class IsEmployee {
 
     /**
      * Run the request filter.
@@ -28,11 +28,11 @@ class IsMember {
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        if (Session::has('member')) {
-            return $next($request);
+        if (!Session::has('member')) {
+            return redirect('/login');
         }
-        return redirect('/login');
-        
+
+        return $next($request);
     }
 
 }

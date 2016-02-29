@@ -24,10 +24,17 @@ class PropertyController extends Controller {
      * @return Response
      */
     public function getIndex(Request $request) {
+        //return $sub;
         Session::put('month',$this->monthName());
         if (isset($request->c)) {
             if (Session::has('member')) {
                 $property = Session::get('member')->properties()->where('code', '=', $request->c)->first();
+                Session::put('property', $property);
+                return view('property.index');
+            }
+        }else if(Session::has('sub')){
+             if (Session::has('member')) {
+                $property = Session::get('member')->property()->first();
                 Session::put('property', $property);
                 return view('property.index');
             }
