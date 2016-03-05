@@ -61,7 +61,7 @@ h4, h5, h6 {
   overflow: hidden;
 }
 .home_main_section-wrapper{
-  min-width: 800px;
+  /*min-width: 800px;*/
 }
 .home_main_section-wrapper .nav li,
 .home_menu_section-wrapper .nav li{
