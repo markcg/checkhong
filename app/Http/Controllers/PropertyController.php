@@ -415,7 +415,7 @@ class PropertyController extends Controller
             if ($employee = Employee::find($request->c)) {
                 $employee->delete();
             }
-            return redirect('/property/check-in');
+            return redirect('/property/employee');
         }
     }
     protected function monthName()
