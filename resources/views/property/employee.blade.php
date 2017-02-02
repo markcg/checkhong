@@ -79,7 +79,7 @@
                               @if($employee->type == 3) พนักงานทั่วไป @endif
                         </td>
                         <td>แก้ไข</td>
-                        <td>ลบ</td>
+                        <td><a href="/property/delete-employee?c={{$employee->id}}">ลบ</a></td>
                     </tr>
                     @endforeach
                     @endif

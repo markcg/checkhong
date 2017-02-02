@@ -402,6 +402,22 @@ class PropertyController extends Controller
             return redirect()->back();
         }
     }
+    public function getDeleteEmployee(Request $request)
+    {
+        if (Session::get('member')->property_id != null) {
+            if (Session::get('member')->type > 2) {
+                return redirect()->back()
+                    ->withErrors(['คุณไม่มีสิทธิ์เข้าใช้งานส่วนนี้'])
+                    ->withInput();
+            }
+        }
+        if (Session::has('property')) {
+            if ($employee = Employee::find($request->c)) {
+                $employee->delete();
+            }
+            return redirect('/property/check-in');
+        }
+    }
     protected function monthName()
     {
         $month = null;
