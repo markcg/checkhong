@@ -79,7 +79,7 @@ class MemberController extends Controller {
                             ->withInput();
         }
         $member = Session::get('member');
-        $propertyCount = sizeof($member->property());
+        $propertyCount = sizeof($member->properties());
         if ($member->type <= 1 && $propertyCount > 1) {
             return redirect()->back()
                             ->withErrors(['บัญชีผู้ใช้ของคุณเป็นเวอร์ชั่นทดลอง ไม่สามารถสร้างกิจการได้มากกว่า 1 กิจการ'])
